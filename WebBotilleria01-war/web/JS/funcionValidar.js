@@ -7,7 +7,7 @@
 //import java.util.List;
 
 function validarIngresoCliente(){
-    //
+    //francisco la lleva
     var nombre = document.getElementById("ingresa_nombre").value;
     var contrasena = document.getElementById("ingresa_contrasena").value;
     
