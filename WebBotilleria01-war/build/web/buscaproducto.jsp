@@ -10,7 +10,6 @@
    
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--<script src="JS/funciones.js" type="text/javascript"></script> -->
         <title>Busqueda Productos...</title>
          <link rel="stylesheet" type="text/css" href="estilos.css"> 
          <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
