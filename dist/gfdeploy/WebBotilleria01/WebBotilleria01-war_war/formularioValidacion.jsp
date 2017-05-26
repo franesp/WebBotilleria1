@@ -26,7 +26,7 @@
             
         </form><br>
         
-        <div id="cnt_valida"></div>
+        <div style="text-align:center; font-family: Times New Roman;" id="cnt_valida"></div>
         <hr />
         <div style="text-align:center;" > <img src="imagen04.jpg"/></div>
     </body>
