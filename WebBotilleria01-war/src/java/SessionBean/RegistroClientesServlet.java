@@ -5,8 +5,11 @@
  */
 package SessionBean;
 
+import Presistencia.ClienteFacadeLocal;
+import Procesos.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Francisco Espinoza
+ * @author Francisco Espinoza/Eduardo Urzua
  */
 public class RegistroClientesServlet extends HttpServlet {
+
+    @EJB
+    private ClienteFacadeLocal clienteFacade;
+    
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,6 +38,8 @@ public class RegistroClientesServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        
         try (PrintWriter out = response.getWriter()) {
             //INGRESAR ALGORITMO PARA REGISTRO DE CLIENTES...
             out.println("<!DOCTYPE html>");
@@ -38,18 +48,33 @@ public class RegistroClientesServlet extends HttpServlet {
             out.println("<title>Servlet RegistroClientesServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            String nombres = request.getParameter("ingresa_nombres");
-            String apellidos = request.getParameter("ingresa_apellidos");
+             //Capturamos valores desde el formulario
+            String nombre = request.getParameter("txt_nombre");
+            String apellido = request.getParameter("ingresa_apellidos");
             String rut = request.getParameter("ingresa_rut");
-            String fechaNacimiento = request.getParameter("ingresa_fnacimiento");
-            String contraseña = request.getParameter("ingresa_contraseña");
+            String fechaNaci = request.getParameter("ingresa_fnacimiento");
+            String contrasena = request.getParameter("ingresa_contraseña");
             String direccion = request.getParameter("ingresa_direccion");
             String numContacto = request.getParameter("ingresa_num_contacto");
             String email = request.getParameter("ingresa_email");
+            //Creamos un obejto de la clase Cliente
+            Cliente nueva = new Cliente();
+            nueva.setNombre(nombre);
+            nueva.setApellido(apellido);
+            nueva.setFechaNaci(fechaNaci);
+            nueva.setDirrecion(direccion);
+            nueva.setRut(rut);
+            nueva.setContrasena(contrasena);
+            nueva.setNumeroTel(numContacto);
+            nueva.setEmail(email);
+            //Invocamos el metodo create de la interfafaz de Cliente ("AbstractFacade.java")
+            clienteFacade.create(nueva);
+           
             
             out.println("<h1>Servlet RegistroClientesServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+           
         }
     }
 

@@ -16,6 +16,10 @@
         <servlet-name>ObtenerDatosProductoServlet</servlet-name>
         <servlet-class>SessionBean.ObtenerDatosProductoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EliminarCliente</servlet-name>
+        <servlet-class>SessionBean.EliminarCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ValidacionDatosServlet</servlet-name>
         <url-pattern>/ValidacionDatosServlet</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ObtenerDatosProductoServlet</servlet-name>
         <url-pattern>/ObtenerDatosProductoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarCliente</servlet-name>
+        <url-pattern>/EliminarCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
