@@ -49,7 +49,7 @@ public class RegistroClientesServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
              //Capturamos valores desde el formulario
-            String nombre = request.getParameter("txt_nombre");
+            String nombre = request.getParameter("ingresa_nombres");
             String apellido = request.getParameter("ingresa_apellidos");
             String rut = request.getParameter("ingresa_rut");
             String fechaNaci = request.getParameter("ingresa_fnacimiento");

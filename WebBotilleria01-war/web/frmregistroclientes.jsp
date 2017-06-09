@@ -17,7 +17,7 @@
         <h1>Registro de clientes...</h1>
         <hr />
         <h1>Por favor ingrese sus datos:</h1>
-        <form name="frm_registro" method="post" action="RegistroCientesServlet">
+        <form name="frm_registro" method="post" action="RegistroClientesServlet">
             <label>Nombres:</label> <input type="text" name="ingresa_nombres" placeholder="Ingrese sus nombres"id="txt_nombre"><br>
             <label>Apellidos:</label> <input type="text" name="ingresa_apellidos" placeholder="Ingrese sus apellidos"><br>
             <label>Rut:</label> <input type="text" name="ingresa_rut" placeholder="Ej: 12345678-9"><br>
