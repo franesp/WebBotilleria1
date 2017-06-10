@@ -22,10 +22,10 @@
             <label>Apellidos:</label> <input type="text" name="ingresa_apellidos" placeholder="Ingrese sus apellidos"><br>
             <label>Rut:</label> <input type="text" name="ingresa_rut" placeholder="Ej: 12345678-9"><br>
             <label>Fecha de nacimiento:</label> <input type="text" name="ingresa_fnacimiento" placeholder="Ej: 01/02/1991"><br>
-            <label>Contraseña:</label> <input type="text" name="ingresa_contraseña" placeholder="Ingrese contraseña"><br>
+            <label>Contraseña:</label> <input type="text" name="ingresa_contrasena" placeholder="Ingrese contraseña"><br>
             <label>Dirección:</label> <input type="text" name="ingresa_direccion" placeholder="Ingrese dirección"><br>
             <label>Número de contacto: </label> <input type="text" name="ingresa_num_contacto" placeholder="Ingrese N° contacto"><br>
-            <label>E-Mail:</label> <input type="text" name="ingresa_mail" placeholder="Ingrese un mail">
+            <label>E-Mail:</label> <input type="text" name="ingresa_email" placeholder="Ingrese un mail">
             <input type="submit" value="Registrarse" >
             
         </form>

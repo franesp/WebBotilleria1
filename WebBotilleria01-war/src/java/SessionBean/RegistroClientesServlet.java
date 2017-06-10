@@ -9,6 +9,7 @@ import Presistencia.ClienteFacadeLocal;
 import Procesos.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -52,8 +53,8 @@ public class RegistroClientesServlet extends HttpServlet {
             String nombre = request.getParameter("ingresa_nombres");
             String apellido = request.getParameter("ingresa_apellidos");
             String rut = request.getParameter("ingresa_rut");
-            String fechaNaci = request.getParameter("ingresa_fnacimiento");
-            String contrasena = request.getParameter("ingresa_contraseña");
+            Date fechaNaci = new Date(request.getParameter("ingresa_fnacimiento"));
+            String contrasena = request.getParameter("ingresa_contrasena");
             String direccion = request.getParameter("ingresa_direccion");
             String numContacto = request.getParameter("ingresa_num_contacto");
             String email = request.getParameter("ingresa_email");
@@ -62,11 +63,12 @@ public class RegistroClientesServlet extends HttpServlet {
             nueva.setNombre(nombre);
             nueva.setApellido(apellido);
             nueva.setFechaNaci(fechaNaci);
-            nueva.setDirrecion(direccion);
+            nueva.setDireccion(direccion);
             nueva.setRut(rut);
             nueva.setContrasena(contrasena);
             nueva.setNumeroTel(numContacto);
             nueva.setEmail(email);
+            
             //Invocamos el metodo create de la interfafaz de Cliente ("AbstractFacade.java")
             clienteFacade.create(nueva);
            

@@ -6,11 +6,12 @@
 package Procesos;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  *
@@ -20,17 +21,24 @@ import javax.persistence.Id;
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String rut;
-    private String nombre;
-    private String fechaNaci;
-    private String contrasena;
-    private String dirrecion;
-    private String numeroTel;
-    private String email;
-    private String apellido;
     
+    private String nombre;
+    
+    private Date fecha_Naci;
+    
+    private String contrasena;
+    
+    private String direccion;
+    
+    private String telefno;
+    
+    private String email;
+    
+    private String apellido;
 
     @Override
     public String toString() {
@@ -61,11 +69,7 @@ public class Cliente implements Serializable {
         }
         return true;
     }
-    
-    
-    
 
-    
     public String getNombre() {
         return nombre;
     }
@@ -74,12 +78,12 @@ public class Cliente implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getFechaNaci() {
-        return fechaNaci;
+    public Date getFecha_Naci() {
+        return fecha_Naci;
     }
 
-    public void setFechaNaci(String fechaNaci) {
-        this.fechaNaci = fechaNaci;
+    public void setFechaNaci(Date fecha_Naci) {
+        this.fecha_Naci = fecha_Naci;
     }
 
     public String getRut() {
@@ -98,20 +102,20 @@ public class Cliente implements Serializable {
         this.contrasena = contrasena;
     }
 
-    public String getDirrecion() {
-        return dirrecion;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDirrecion(String dirrecion) {
-        this.dirrecion = dirrecion;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getNumeroTel() {
-        return numeroTel;
+    public String gettelefno() {
+        return telefno;
     }
 
-    public void setNumeroTel(String numeroTel) {
-        this.numeroTel = numeroTel;
+    public void setNumeroTel(String telefno) {
+        this.telefno = telefno;
     }
 
     public String getEmail() {
@@ -129,5 +133,5 @@ public class Cliente implements Serializable {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
+
 }

@@ -37,7 +37,6 @@ public class ObtenerDatosProductoServlet extends HttpServlet {
 
             Producto p = null;
 
-            
             if(request.getParameter("ingresa_codigo") != null
                     && request.getParameter("ingresa_producto") != null
                     && !request.getParameter("ingresa_codigo") .isEmpty()
